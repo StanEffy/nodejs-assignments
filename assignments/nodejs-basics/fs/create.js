@@ -1,16 +1,7 @@
-const { promises: Fs } = require('fs')
-const fs = require('fs')
+import fs from "fs"
+import exists from "./exists.js";
 
 const path = "./fresh.txt"
-
-async function exists (path) {
-    try {
-        await Fs.access(path)
-        return true
-    } catch {
-        return false
-    }
-};
 
 async function createFile() {
     const exist = await exists(path);

@@ -1,13 +1,5 @@
-const fs = require('fs')
-
-async function exists (path) {
-    try {
-        await fs.promises.access(path)
-        return true
-    } catch {
-        return false
-    }
-};
+import fs from "fs"
+import exists from "./exists.js";
 
 async function rename() {
     const existFrom = await exists("wrongFilename.txt");
